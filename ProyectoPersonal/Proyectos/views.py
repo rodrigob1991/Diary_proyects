@@ -28,10 +28,32 @@ def create_proyect(request):
 			return redirect('proyect_description', primary_key=proyect.pk)
 	else:
 		new_proyect=ProyectForm()
-		new_objetive=ObjetiveForm()
-		new_obstacle=ObstacleForm()
+		
+		return render(request,'Proyectos/new_proyect.html',{'new_proyect':new_proyect})
 
-		return render(request,'Proyectos/new_proyect.html',{'new_proyect':new_proyect,'new_objetive':new_objetive,'new_obstacle':new_obstacle})
+def create_objetive(request):
+
+	if request.method=="POST":
+		form=ObjetiveForm(request.POST)
+		if form.is_valid():
+			objetive=form.save(commit=True)
+			return redirect('create_objetive')
+	else:
+		form=ObjetiveForm()
+		return render(request,'Proyectos/new_relation.html',{'form':form})
 
 
-	
+def create_obstacle(request):
+
+	if request.method=="POST":
+		form=ObstacleForm(request.POST)
+		if form.is_valid():
+			obstacle=form.save(commit=True)
+			return redirect('create_obstacle')
+
+	else: 
+		form=ObstacleForm()
+		return render(request,'Proyectos/new_relation.html',{'form':form})
+
+
+		

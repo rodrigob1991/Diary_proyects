@@ -2,7 +2,7 @@
 
 	{%block content%}
 		<form method="Post" class="post-form">
-		{%csrf_token%}
+	    {%csrf_token%}
 		{%for field_pro in new_proyect%}
 		<p>{{field_pro}} {{field_pro.name}}</p>
 		{%endfor%}
@@ -12,6 +12,28 @@
 		{%for field_obj in new_objetive%}
 		<p>{{field_obj}} {{field_obj.name}}</p>
 		{%endfor%}
+
+		<button id="buttonAddObstacle">Add obstacle</button>
+	    <button id="buttonAddObjetive">Add objetive</button>
+	 	<br>
+	 	<br>
 		<button type="submit" class="save btn btn-default">Save</button>
-		</form>
-	{%endblock%}
+
+	   </form>
+
+		<script>
+
+    	var eWindows;
+
+	    function window_open(urlObj_or_urlObst){
+	      eWindows = window.open(urlObj_or_urlObst, "EntryRelation", "width=380,height=300, top=85,right=50");
+	    }
+		document.getElementById("buttonAddObstacle").onclick = function() 
+		{window_open("http://127.0.0.1:8000/new_obstacle/")};
+
+	    document.getElementById("buttonAddObjetive").onclick = function()
+	    {window_open("http://127.0.0.1:8000/new_objetive/")};
+
+		</script>
+
+  	{%endblock%}
