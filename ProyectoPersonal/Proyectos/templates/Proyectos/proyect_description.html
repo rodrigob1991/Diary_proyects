@@ -1,0 +1,26 @@
+{% extends 'Proyectos/base.html' %}
+	{%block content%}
+		
+		<h3>Name</h3>
+		{{proyect.name}};
+		Started: {{proyect.started_time}}; Goal time:{{proyect.goal_time}}; Finished={{proyect.finished}}
+		<h3>Description</h3>
+		{{proyect.description}}
+		<h3>Objetives</h3>
+		 {%for objetive in proyect.objetives.all%}
+		 {% if objetive.completed %}
+		 	{{objetive.name}}(completed).
+		 {%else%}
+			 {{objetive.name}}
+		 {%endif%}
+		 {%endfor%}
+		 <h3>Obstacles</h3>
+		 {%for obstacle in proyect.obstacles.all%}
+		 	{{obstacle.name}}: {{obstacle.difficulty}} difficulty
+
+		 {%endfor%}
+		
+		
+	{%endblock%}
+
+

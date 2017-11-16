@@ -1,0 +1,17 @@
+{% extends 'Proyectos/base.html' %}
+
+	{%block content%}
+		<form method="Post" class="post-form">
+		{%csrf_token%}
+		{%for field_pro in new_proyect%}
+		<p>{{field_pro}} {{field_pro.name}}</p>
+		{%endfor%}
+		{%for field_obst in new_obstacle%}
+		<p>{{field_obst}} {{field_obst.name}}</p>
+		{%endfor%}
+		{%for field_obj in new_objetive%}
+		<p>{{field_obj}} {{field_obj.name}}</p>
+		{%endfor%}
+		<button type="submit" class="save btn btn-default">Save</button>
+		</form>
+	{%endblock%}
