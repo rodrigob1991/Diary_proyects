@@ -1,4 +1,7 @@
 {% extends 'Proyectos/base.html' %}
+	{%block head%}
+		<h1>Proyects</h1>
+	{%endblock%}
 	{%block content%}
 		{%for proyect in proyects%}
 		<h2><a href="{% url 'proyect_description' primary_key=proyect.pk %}">{{proyect}}</a></h2>

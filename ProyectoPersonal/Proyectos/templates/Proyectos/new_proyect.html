@@ -1,25 +1,19 @@
 {% extends 'Proyectos/base.html' %}
+	{%block head%}
+		<h1>Create proyect</h1>
+	{%endblock%}
 
 	{%block content%}
-		<form method="Post" class="post-form">
+		
+		<form method="Post" class="proyect-form">
 	    {%csrf_token%}
 		{%for field_pro in new_proyect%}
 		<p>{{field_pro}} {{field_pro.name}}</p>
 		{%endfor%}
-		{%for field_obst in new_obstacle%}
-		<p>{{field_obst}} {{field_obst.name}}</p>
-		{%endfor%}
-		{%for field_obj in new_objetive%}
-		<p>{{field_obj}} {{field_obj.name}}</p>
-		{%endfor%}
-
-		<button id="buttonAddObstacle">Add obstacle</button>
-	    <button id="buttonAddObjetive">Add objetive</button>
-	 	<br>
-	 	<br>
-		<button type="submit" class="save btn btn-default">Save</button>
-
-	   </form>
+		<button type="submit" class="save">Save</button>
+		<button id="buttonAddObstacle" class="buttonObs">Add obstacle</button>
+	    <button id="buttonAddObjetive" class="buttonObj">Add objetive</button>
+		</form>
 
 		<script>
 
