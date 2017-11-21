@@ -27,9 +27,9 @@ def create_proyect(request):
 			proyect.save()
 			return redirect('proyect_description', primary_key=proyect.pk)
 	else:
-		new_proyect=ProyectForm()
+		form=ProyectForm()
 		
-		return render(request,'Proyectos/new_proyect.html',{'new_proyect':new_proyect})
+		return render(request,'Proyectos/new_proyect.html',{'form':form})
 
 def create_objetive(request):
 
@@ -50,10 +50,22 @@ def create_obstacle(request):
 		if form.is_valid():
 			obstacle=form.save(commit=True)
 			return redirect('create_obstacle')
-
 	else: 
 		form=ObstacleForm()
 		return render(request,'Proyectos/new_relation.html',{'form':form})
+
+def edit_proyect(request,primary_key):
+	proyect=get_object_or_404(Proyect,pk=primary_key)
+	if request.method=="POST":
+		form=ProyectForm(request.POST,instance=proyect)
+		if form.is_valid():
+			proyect=form.save(commit=False)
+			proyect.add_goal_time(form.cleaned_data["add_goal_time"])
+			proyect.save()
+			return redirect('proyect_description',primary_key=proyect.pk)
+	else:
+		form=ProyectForm(instance=proyect)
+		return render(request,'Proyectos/new_proyect.html',{'form':form})
 
 
 		

@@ -7,7 +7,7 @@ class ProyectForm(forms.ModelForm):
 		model=Proyect
 		fields= ('name','obstacles','objetives','description')
 
-	add_goal_time=forms.IntegerField()
+	add_goal_time=forms.IntegerField(required=False)
 
 class ObjetiveForm(forms.ModelForm):
 	class Meta:

@@ -7,7 +7,7 @@
 		
 		<form method="Post" class="proyect-form">
 	    {%csrf_token%}
-		{%for field_pro in new_proyect%}
+		{%for field_pro in form%}
 		<p>{{field_pro}} {{field_pro.name}}</p>
 		{%endfor%}
 		<button type="submit" class="save">Save</button>
@@ -19,7 +19,7 @@
 
     	var eWindows;
 
-	    function window_open(urlObj_or_urlObst){
+	    function window_open(url){
 	      eWindows = window.open(urlObj_or_urlObst, "EntryRelation", "width=380,height=300, top=85,right=50");
 	    }
 		document.getElementById("buttonAddObstacle").onclick = function() 

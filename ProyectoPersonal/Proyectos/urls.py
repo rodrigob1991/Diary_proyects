@@ -7,4 +7,5 @@ urlpatterns=[
 	url(r'^new_proyect/', views.create_proyect,name='create_proyect'),
 	url(r'^new_objetive/',views.create_objetive,name='create_objetive'),
 	url(r'^new_obstacle/',views.create_obstacle,name='create_obstacle'),
+	url(r'^proyect/edit/(?P<primary_key>[0-9]+)/',views.edit_proyect,name='edit_proyect'),
 ]
