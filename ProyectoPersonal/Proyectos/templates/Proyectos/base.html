@@ -1,12 +1,21 @@
+{% load staticfiles %}
 <html>
 	<head>
+		
+		<form action="http://127.0.0.1:8000/">
+    	<input class="proyects" type="submit" value="Proyects" />
+		</form>
+		<form  action="http://127.0.0.1:8000/new_proyect">
+        <input class="new_proyect" type="submit" value="New Proyect" />
+        </form>
+
+		<link type="text/css" rel="stylesheet" href="{% static 'css/Proyectos.css' %}">
 		<title>Proyects</title>
-		<h1>Proyects</h1>
+		{%block head%}
+		{%endblock%}
 	</head>
 	<body>
-		<div>
 		{%block content%}
 		{%endblock%}
-		</div>
 	</body>
 <html>

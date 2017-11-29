@@ -1,6 +1,11 @@
 {% extends 'Proyectos/base.html' %}
+
+	{%block head%}
+		<h1>Proyect</h1>
+	{%endblock%}
+
 	{%block content%}
-		
+		<div id="proyectDescription">
 		<h3>Name</h3>
 		{{proyect.name}};
 		Started: {{proyect.started_time}}; Goal time:{{proyect.goal_time}}; Finished={{proyect.finished}}
@@ -11,15 +16,16 @@
 		 {% if objetive.completed %}
 		 	{{objetive.name}}(completed).
 		 {%else%}
-			 {{objetive.name}}
+			 {{objetive.name}}.
 		 {%endif%}
 		 {%endfor%}
 		 <h3>Obstacles</h3>
 		 {%for obstacle in proyect.obstacles.all%}
-		 	{{obstacle.name}}: {{obstacle.difficulty}} difficulty
+		 	{{obstacle.name}}: {{obstacle.difficulty}} difficulty.
 
 		 {%endfor%}
-		
+		</div>
+		<a href="{% url 'edit_proyect' primary_key=proyect.pk %}">Edit</a>
 		
 	{%endblock%}
 

@@ -1,0 +1,63 @@
+.new_proyect{
+    position:absolute;
+    left:0px;
+    background-color:#7FFF00;
+}
+.proyects{
+    position:absolute;
+    left:95px;
+    background-color:#7FFF00;
+}
+
+h1 {
+	color: 	#4B0082; 
+	font-family: tahoma;
+    padding-left: 300px;
+  
+
+}
+
+.proyect-form {
+	margin-left: 150px;
+	font-variant: small-caps;
+}
+
+.buttonObj{
+	position: absolute;
+	left: 600px;
+	top: 150px;
+	background-color:#ADD8E6;
+}
+.buttonObs{
+	position:absolute;
+	left: 600px;
+	top: 180px;
+	background-color:#ADD8E6;
+	
+}
+.save{
+	position:absolute;
+	left: 600px;
+	top: 400px;
+	height: 50px;
+	width: 90px;
+	background-color:#0000CD;
+	font-size: 1.5em;
+	color: #acd1b2;
+}
+
+h2{
+	color:#32CD32;
+	padding-left:200px;
+	text-decoration: underline yellow; 
+}
+
+h3 {
+	color:#808000;
+	font-family:fantasy;
+	text-decoration:underline red; 
+}
+
+#proyectDescription{
+	padding-left: 100px;
+}
