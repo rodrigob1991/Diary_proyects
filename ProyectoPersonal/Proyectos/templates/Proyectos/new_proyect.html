@@ -8,19 +8,27 @@
 		<form method="Post" class="proyect-form">
 	    {%csrf_token%}
 		{%for field_pro in form%}
+		{% if field_pro == form.obstacles %}
+		<div id=relations>{{field_pro}} {{field_pro.name}}</div>
+		{% elif field_pro == form.objetives %}
+		<div id=relations>{{field_pro}} {{field_pro.name}}</div>
+		{%else%}
 		<p>{{field_pro}} {{field_pro.name}}</p>
+		{%endif%}
 		{%endfor%}
 		<button type="submit" class="save">Save</button>
+		</form>
+		
 		<button id="buttonAddObstacle" class="buttonObs">Add obstacle</button>
 	    <button id="buttonAddObjetive" class="buttonObj">Add objetive</button>
-		</form>
+		
 
 		<script>
 
     	var eWindows;
 
 	    function window_open(url){
-	      eWindows = window.open(urlObj_or_urlObst, "EntryRelation", "width=380,height=300, top=85,right=50");
+	      eWindows = window.open(url, "EntryRelation", "width=380,height=300, top=85,right=50");
 	    }
 		document.getElementById("buttonAddObstacle").onclick = function() 
 		{window_open("http://127.0.0.1:8000/new_obstacle/")};

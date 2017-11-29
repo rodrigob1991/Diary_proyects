@@ -16,12 +16,12 @@
 		 {% if objetive.completed %}
 		 	{{objetive.name}}(completed).
 		 {%else%}
-			 {{objetive.name}}
+			 {{objetive.name}}.
 		 {%endif%}
 		 {%endfor%}
 		 <h3>Obstacles</h3>
 		 {%for obstacle in proyect.obstacles.all%}
-		 	{{obstacle.name}}: {{obstacle.difficulty}} difficulty
+		 	{{obstacle.name}}: {{obstacle.difficulty}} difficulty.
 
 		 {%endfor%}
 		</div>

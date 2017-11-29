@@ -60,6 +60,8 @@ def edit_proyect(request,primary_key):
 		form=ProyectForm(request.POST,instance=proyect)
 		if form.is_valid():
 			proyect=form.save(commit=False)
+			proyect.obstacles.set(form.cleaned_data["obstacles"])
+			proyect.objetives.set(form.cleaned_data["objetives"])
 			proyect.add_goal_time(form.cleaned_data["add_goal_time"])
 			proyect.save()
 			return redirect('proyect_description',primary_key=proyect.pk)

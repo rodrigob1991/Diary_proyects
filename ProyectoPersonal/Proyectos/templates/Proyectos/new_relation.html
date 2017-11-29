@@ -8,8 +8,17 @@
 		{%for field in form%}
 		<p>{{field}}{{field.name}}</p>
 		{%endfor%}
-		<button type="submit"  class="save btn btn-default">Save</button>
+		<button type="submit"  id="buttonRelation">Save</button>
 		</form>
+		<script>
+
+	    window.onunload = window_reload;
+    	function window_reload() {
+    		window.opener.location.reload();
+    	}
+		document.getElementById("buttonRelation").onclick=function() 
+		{window_reload()};
+		</script>
 
 	</body>
 <html>
